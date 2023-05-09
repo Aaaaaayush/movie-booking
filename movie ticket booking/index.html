@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Movie Seat Booking</title>
+  </head>
+  <body>
+    <div class="movie-container">
+      <label>NOW SHOWING:</label>
+      <select id="movie">
+        <option value="10">Fast X ($10)</option>
+        <option value="12">Antman and the Wasp Quantumania ($12)</option>
+        <option value="8">Murder Mystery 2 ($8)</option>
+        <option value="9">Operation Fortune Ruse de Guerre ($9)</option>
+      </select>
+    </div>
+
+    <ul class="showcase">
+      <li>
+        <div class="seat"></div>
+        <small>Available seats</small>
+      </li>
+
+      <li>
+        <div class="seat selected"></div>
+        <small>Your selected seats</small>
+      </li>
+
+      <li>
+        <div class="seat occupied"></div>
+        <small>booked seats</small>
+      </li>
+    </ul>
+
+    <div class="container">
+      <div class="screen"></div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+      </div>
+
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat occupied"></div>
+        <div class="seat"></div>
+      </div>
+    </div>
+
+    <p class="text">
+      You have selected <span id="count">0</span> seats for a price of $<span id="total">0</span>
+    </p>
+    <script src="script.js"></script>
+
+    <h1 style="text-align: center;">BOOKING</h1>
+    <h3 style="text-align: center;">[ * ] marked fields are important</h3>
+        <form>
+            <table>
+                <tr>
+                    <td>
+                        RegistrationID*:
+                    </td>
+                    <td>
+                    <input type="text" placeholder="registration id" name="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Username*:
+                    </td>
+                    <td>
+                    <input type="text" placeholder="Name" name="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Password*:
+                    </td>
+                    <td>
+                    <input type="text" placeholder="*****" name="">    
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Email id*:
+                    </td>
+                    <td>
+                    <input type="text" placeholder="email" Email id="">
+                    </td>
+                </tr>
+                <tr> 
+                    <td>
+                        Mobile No*:
+                    </td>
+                    <td>
+                    <input type="text" placeholder="##########" name="">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Date of Birth (DOB)*:
+                    </td>
+                    <td>
+                    <input type="date" placeholder="dd/mm/yyyy" name="">
+                    </td>
+                </tr>
+                <td>
+                    <button onclick="aFunction()">submit</button>
+                    <script>
+                      function aFunction() {
+                        alert("Enjoy your movie :)")
+                      }
+                    </script>
+                    <button onclick="myFunction()">cancel</button>
+                    <script>
+                      function myFunction() {
+                        alert("Are you sure about that?")
+                      }
+                    </script>
+                </td>
+            </table>
+        </form>
+      <h3>Next show starts in</h3>
+      <p id="demo"></p>
+      <script>
+      // Set the date we're counting down to
+      var countDownDate = new Date("Jan 1, 2024 00:00:00").getTime();
+
+      // Update the count down every 1 second
+      var x = setInterval(function() {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        // Display the result in the element with id="demo"
+        document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s ";
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+      }, 1000);
+      </script>
+  </body>
+</html>
